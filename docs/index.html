@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>kwconfig &#8212; kwconfig 0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 0.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kwconfig">
+<h1>kwconfig<a class="headerlink" href="#kwconfig" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="line-block">
+<div class="line">Richard Wen</div>
+<div class="line"><a class="reference external" href="mailto:rrwen&#46;dev&#37;&#52;&#48;gmail&#46;com">rrwen<span>&#46;</span>dev<span>&#64;</span>gmail<span>&#46;</span>com</a></div>
+</div>
+<p>A module for managing config files in keyword style json format.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kwconfig</span> <span class="k">import</span> <span class="n">kwconfig</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">kwconfig</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Install <a class="reference external" href="https://www.python.org/downloads/">Python</a></li>
+<li>Install <a class="reference external" href="https://pypi.python.org/pypi/kwconfig">kwconfig</a> via <code class="docutils literal"><span class="pre">pip</span></code></li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">kwconfig</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kwconfig</span>
+
+<span class="c1"># Specify a file path for creating kwconfig object</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">kwconfig</span><span class="o">.</span><span class="n">manage</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For more details on module usage, see the example in <a class="reference internal" href="#kwconfig.manage">kwconfig.manage</a>.</p>
+</div>
+<div class="section" id="module-kwconfig">
+<span id="modules"></span><h2>Modules<a class="headerlink" href="#module-kwconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kwconfig.manage">
+<em class="property">class </em><code class="descclassname">kwconfig.</code><code class="descname">manage</code><span class="sig-paren">(</span><em>file_path</em>, <em>defaults={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manage configuration files in keyword style JSON format.</p>
+<dl class="docutils">
+<dt>Notes:</dt>
+<dd>Creates a configuration file with the <code class="docutils literal"><span class="pre">defaults</span></code> if the <code class="docutils literal"><span class="pre">file_path</span></code> does not exist.</dd>
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>file_path (str):</dt>
+<dd>Path to the configuration file in JSON format.</dd>
+<dt>defaults (dict):</dt>
+<dd>Dictionary of a default keyword dict.</dd>
+</dl>
+</dd>
+<dt>Attributes:</dt>
+<dd><dl class="first last docutils">
+<dt>file_path (str):</dt>
+<dd>Path to the configuration file in JSON format.</dd>
+</dl>
+</dd>
+<dt>Examples: </dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Import the kwconfig module</span>
+<span class="kn">import</span> <span class="nn">kwconfig</span>
+
+<span class="c1"># Specify a file path for creating config object</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">kwconfig</span><span class="o">.</span><span class="n">manage</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;key0&#39;</span><span class="p">:</span> <span class="s1">&#39;value0&#39;</span><span class="p">})</span>
+
+<span class="c1"># Update the config file with a key and value dict</span>
+<span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value2&#39;</span><span class="p">})</span>
+
+<span class="c1"># Add a keyword dict to existing config file</span>
+<span class="c1"># If a key exists, it will be updated</span>
+<span class="c1"># If a key does not exist, it will be added</span>
+<span class="n">other_config</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key3&#39;</span><span class="p">:</span> <span class="s1">&#39;value3&#39;</span><span class="p">}</span>
+<span class="n">other_config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">other_config</span><span class="p">)</span>
+
+<span class="c1"># Write new default values using keyword dict</span>
+<span class="n">config</span><span class="o">.</span><span class="n">overwrite</span><span class="p">({</span>
+  <span class="s1">&#39;new_key1&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value1&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;new_key2&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value2&#39;</span>
+<span class="p">)</span>
+  
+<span class="c1"># Obtain a dict of the config file contents</span>
+<span class="n">kw</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Remove the key named &quot;key1&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">)</span>
+
+<span class="c1"># Reset to defaults</span>
+<span class="n">config</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt id="kwconfig.manage.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>other_config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add default arguments to another configuration dictionary.</p>
+<p>Adds the default arguments from <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path 
+to another configuration dictionary if it is not already set.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>other_config (dict):</dt>
+<dd>The other configuration dictionary of keyword arguments.</dd>
+</dl>
+</dd>
+<dt>Return:</dt>
+<dd>A dict of the combined and updated config file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.overwrite">
+<code class="descname">overwrite</code><span class="sig-paren">(</span><em>new_config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.overwrite"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite default arguments for configuration file.</p>
+<p>Overwrites the contents of <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path with <code class="docutils literal"><span class="pre">new_config</span></code>.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>new_config (dict):</dt>
+<dd>The new default arguments as a keyword dictionary.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read default arguments from configuration file.</p>
+<p>Reads the configuration file content into a keyword dictionary.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>A dict of the default arguments from <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove keys from configuration file.</p>
+<p>Removes a key from <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>k (str):</dt>
+<dd>The key to remove from <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset keyword values for configuration file.</p>
+<p>Resets the contents of <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path with <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.defaults.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>arguments</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update keyword values for configuration file.</p>
+<p>Updates the contents of <a class="reference internal" href="#kwconfig.manage" title="kwconfig.manage"><code class="xref py py-class docutils literal"><span class="pre">kwconfig.manage</span></code></a>.file_path with <code class="docutils literal"><span class="pre">arguments</span></code>.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>arguments (dict):</dt>
+<dd>Keyword dict to use as an update.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">kwconfig</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#module-kwconfig">Modules</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 0.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Richard Wen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>
