@@ -102,7 +102,7 @@ Documentation Maintenance
   pip install . -I
   sphinx-build -b html docs/source docs
   
-Upload to github
+Upload to Github
 ****************
 
 1. Ensure `git <https://git-scm.com/>`_ is installed
