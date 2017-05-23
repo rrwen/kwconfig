@@ -7,7 +7,7 @@ kwconfig
 | Richard Wen
 | rrwen.dev@gmail.com
 
-A module for managing config files in keyword style json format.
+A Python module for managing config files in keyword style json format.
 
 ::
   

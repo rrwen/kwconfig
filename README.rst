@@ -41,11 +41,11 @@ Usage
   other_config = {'key3': 'value3'}
   other_config = config.add(other_config)
   
-  # Write new default values using keyword dict
+  # Write new values using keyword dict
   config.overwrite({
     'new_key1': 'new_value1',
     'new_key2': 'new_value2'
-  )
+  })
   
   # Obtain a dict of the config file contents
   kw = config.read()
@@ -79,6 +79,17 @@ Install from ``git`` cloned source:
   git clone https://github.com/rrwen/kwconfig
   cd kwconfig
   pip install . -I
+  
+Tests
+*****
+
+1. Ensure `unittest <https://docs.python.org/2.7/library/unittest.html>`_ is available
+2. Run tests
+
+::
+  
+  pip install . -I
+  python -m unittest
 
 Documentation Maintenance
 *************************

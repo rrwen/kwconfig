@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '0.0.0'
+__version__ = '1.0.0'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -59,11 +59,11 @@ class manage:
       other_config = {'key3': 'value3'}
       other_config = config.add(other_config)
       
-      # Write new default values using keyword dict
+      # Write new values using keyword dict
       config.overwrite({
         'new_key1': 'new_value1',
         'new_key2': 'new_value2'
-      )
+      })
         
       # Obtain a dict of the config file contents
       kw = config.read()
