@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.0.1'
+__version__ = '1.0.3'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -20,6 +20,7 @@ __keywords__ = [
   'module']
 __url__ = 'https://github.com/rrwen/kwconfig'
 __download_url__ = 'https://github.com/rrwen/kwconfig/archive/master.zip'
+__packages__ = ['kwconfig']
 
 from os.path import isfile
 

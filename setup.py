@@ -20,5 +20,6 @@ setup(
   license=package.__license__,
   url=package.__url__,
   download_url=package.__download_url__,
-  keywords =package. __keywords__
+  keywords=package. __keywords__,
+  packages=package.__packages__
 )
