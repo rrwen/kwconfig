@@ -122,7 +122,7 @@ Upload to PyPi
 2. Ensure `sphinx <https://github.com/sphinx-doc/sphinx/>`_ is installed ``pip install -U sphinx``
 3. Run tests and check for OK status
 4. Delete ``dist`` directory
-5. Update the version ``kwconfig.py``
+5. Update the version in ``kwconfig/__init__.py``
 6. Update the documentation in ``docs/``
 7. Create source distribution
 8. Upload to `PyPi <https://pypi.python.org/pypi>`_
