@@ -120,15 +120,17 @@ Upload to PyPi
 
 1. Ensure `twine <https://pypi.python.org/pypi/twine>`_ is installed ``pip install twine``
 2. Ensure `sphinx <https://github.com/sphinx-doc/sphinx/>`_ is installed ``pip install -U sphinx``
-3. Delete ``dist`` directory
-4. Update the version ``kwconfig.py``
-5. Update the documentation in ``docs/``
-6. Create source distribution
-7. Upload to `PyPi <https://pypi.python.org/pypi>`_
+3. Run tests and check for OK status
+4. Delete ``dist`` directory
+5. Update the version ``kwconfig.py``
+6. Update the documentation in ``docs/``
+7. Create source distribution
+8. Upload to `PyPi <https://pypi.python.org/pypi>`_
 
 ::
   
   pip install . -I
+  python -m unittest
   sphinx-build -b html docs/source docs
   python setup.py sdist
   twine upload dist/*
