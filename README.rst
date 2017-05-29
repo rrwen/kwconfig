@@ -56,6 +56,18 @@ Usage
   # Reset to defaults
   config.reset()
   
+  # Parsing a keyword list into dict ----
+  
+  # Create a sample list of keyword arguments
+  argv = ['--key1=value1', '--key2=value2']
+  
+  # Parse into a keyword dict
+  kwdict = kwconfig.parse(argv)
+  
+  # View the values of key1 and key2
+  print('key1: ' + kwdict['key1'])
+  print('key2: ' + kwdict['key2'])
+  
 For more usage details, see the `Documentation <https://rrwen.github.io/kwconfig>`_.
 
 Developer Notes
