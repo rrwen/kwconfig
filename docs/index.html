@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>kwconfig &#8212; kwconfig 1.0.3 documentation</title>
+    <title>kwconfig &#8212; kwconfig 1.0.4 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0.3',
+        VERSION:     '1.0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.4 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -85,7 +85,8 @@
 <dt id="kwconfig.manage">
 <em class="property">class </em><code class="descclassname">kwconfig.</code><code class="descname">manage</code><span class="sig-paren">(</span><em>file_path</em>, <em>defaults={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manage configuration files in keyword style JSON format.</p>
-<dl class="docutils">
+<blockquote>
+<div><dl class="docutils">
 <dt>Notes:</dt>
 <dd>Creates a configuration file with the <code class="docutils literal"><span class="pre">defaults</span></code> if the <code class="docutils literal"><span class="pre">file_path</span></code> does not exist.</dd>
 <dt>Args:</dt>
@@ -102,8 +103,9 @@
 <dd>Path to the configuration file in JSON format.</dd>
 </dl>
 </dd>
-<dt>Examples: </dt>
-<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Import the kwconfig module</span>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Import the kwconfig module</span>
 <span class="kn">import</span> <span class="nn">kwconfig</span>
 
 <span class="c1"># Specify a file path for creating config object</span>
@@ -120,10 +122,10 @@
 
 <span class="c1"># Write new values using keyword dict</span>
 <span class="n">config</span><span class="o">.</span><span class="n">overwrite</span><span class="p">({</span>
-  <span class="s1">&#39;new_key1&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value1&#39;</span><span class="p">,</span>
-  <span class="s1">&#39;new_key2&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value2&#39;</span>
+        <span class="s1">&#39;new_key1&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;new_key2&#39;</span><span class="p">:</span> <span class="s1">&#39;new_value2&#39;</span>
 <span class="p">})</span>
-  
+
 <span class="c1"># Obtain a dict of the config file contents</span>
 <span class="n">kw</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -134,8 +136,16 @@
 <span class="n">config</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
+<p># Send commands to run</p>
+<p># Set default key and value
+config.command([&#8216;-s&#8217;, &#8216;new_key1=newvalue1&#8217;], i=0)</p>
+<p># Remove default key
+config.command([&#8216;-r&#8217;, &#8216;new_key1&#8217;], i=0)</p>
+<p># Print defaults
+config.command([&#8216;-v&#8217;], i=0)</p>
+<p># Reset defaults
+config.command([&#8216;-d&#8217;], i=0)</p>
 <dl class="method">
 <dt id="kwconfig.manage.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>other_config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.add" title="Permalink to this definition">¶</a></dt>
@@ -151,6 +161,31 @@ to another configuration dictionary if it is not already set.</p>
 </dd>
 <dt>Return:</dt>
 <dd>A dict of the combined and updated config file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="kwconfig.manage.command">
+<code class="descname">command</code><span class="sig-paren">(</span><em>argv</em>, <em>i=0</em>, <em>quit=True</em>, <em>silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Consume a list of arguments and execute commands.</p>
+<p>Runs a kwconfig method based on item <code class="docutils literal"><span class="pre">i</span></code> in <code class="docutils literal"><span class="pre">argv</span></code>:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">['-s',</span> <span class="pre">'&lt;arg&gt;=&lt;value&gt;']</span></code>: set default optional arguments</li>
+<li><code class="docutils literal"><span class="pre">['-r',</span> <span class="pre">'&lt;arg&gt;']</span></code>: remove default arguments</li>
+<li><code class="docutils literal"><span class="pre">['-v']</span></code>: view default arguments</li>
+<li><code class="docutils literal"><span class="pre">['-d']</span></code>: reset default arguments</li>
+</ul>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>argv (listof str):</dt>
+<dd>A list of str arguments to execute commands (e.g. from the command line).</dd>
+<dt>quit (bool):</dt>
+<dd>Whether to quit if a command is executed (if a command is not found, it will not exit).</dd>
+<dt>silent (bool):</dt>
+<dd>Whether to suppress messages (True) or allow them (False).</dd>
+</dl>
+</dd>
 </dl>
 </dd></dl>
 
@@ -219,6 +254,36 @@ to another configuration dictionary if it is not already set.</p>
 
 </dd></dl>
 
+<dl class="function">
+<dt id="kwconfig.parse">
+<code class="descclassname">kwconfig.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>argv</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse optional list of keyword arguments into a dict.</p>
+<p>Parses a list of keyword arguments defined by a leading <code class="docutils literal"><span class="pre">--</span></code> and separated by <code class="docutils literal"><span class="pre">=</span></code> (for example, &#8211;key=value).</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>argv (listof str):</dt>
+<dd>Keyword dict to use as an update.</dd>
+</dl>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Import the kwconfig module</span>
+<span class="kn">import</span> <span class="nn">kwconfig</span>
+
+<span class="c1"># Create a sample list of keyword arguments</span>
+<span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;--key1=value1&#39;</span><span class="p">,</span> <span class="s1">&#39;--key2=value2&#39;</span><span class="p">]</span>
+
+<span class="c1"># Parse into a keyword dict</span>
+<span class="n">kwdict</span> <span class="o">=</span> <span class="n">kwconfig</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+
+<span class="c1"># View the values of key1 and key2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;key1: &#39;</span> <span class="o">+</span> <span class="n">kwdict</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;key2: &#39;</span> <span class="o">+</span> <span class="n">kwdict</span><span class="p">[</span><span class="s1">&#39;key2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
@@ -268,7 +333,7 @@ to another configuration dictionary if it is not already set.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.3 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.4 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
