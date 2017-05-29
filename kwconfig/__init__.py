@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -75,20 +75,20 @@ class manage:
 		
 		# Reset to defaults
 		config.reset()
-    
-    # Send commands to run
-    
-    # Set default key and value
-    config.command(['-s', 'new_key1=newvalue1'], i=0)
-    
-    # Remove default key
-    config.command(['-r', 'new_key1'], i=0)
-    
-    # Print defaults
-    config.command(['-v'], i=0)
-    
-    # Reset defaults
-    config.command(['-d'], i=0)
+		
+		# Send commands to run
+		
+		# Set default key and value
+		config.command(['-s', 'new_key1=newvalue1'], i=0)
+		
+		# Remove default key
+		config.command(['-r', 'new_key1'], i=0)
+		
+		# Print defaults
+		config.command(['-v'], i=0)
+		
+		# Reset defaults
+		config.command(['-d'], i=0)
 	"""
 	def __init__(
 		self,
@@ -121,7 +121,7 @@ class manage:
 		"""Consume a list of arguments and execute commands.
 		
 		Runs a kwconfig method based on item ``i`` in ``argv``:
-    
+		
 		* ``['-s', '<arg>=<value>']``: set default optional arguments
 		* ``['-r', '<arg>']``: remove default arguments
 		* ``['-v']``: view default arguments
