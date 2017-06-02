@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.0.6'
+__version__ = '1.0.7'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -117,11 +117,12 @@ class manage:
 				other_config[k] = v
 		return other_config
 		
-	def command(self, argv, i=0, quit=True, silent=False):
+	def command(self, argv, i=0, doc='', quit=True, silent=False):
 		"""Consume a list of arguments and execute commands.
 		
 		Runs a kwconfig method based on item ``i`` in ``argv``:
 		
+		* ``['-h']`` or ``[]``: show ``doc`` text
 		* ``['-s', '<arg>=<value>']``: set default optional arguments
 		* ``['-r', '<arg>']``: remove default arguments
 		* ``['-v']``: view default arguments
@@ -130,6 +131,9 @@ class manage:
 		Args:
 			argv (listof str):
 				A list of str arguments to execute commands (e.g. from the command line).
+			doc (str):
+				String containing the help documentation to print out on the command line interface when using
+				``-h`` or not entering any commands or arguments.
 			quit (bool):
 				Whether to quit if a command is executed (if a command is not found, it will not exit).
 			silent (bool):
@@ -138,24 +142,31 @@ class manage:
 		consumed = False
 		
 		# (command) Execute methods
-		if argv[i] == '-s': # set defaults
-			k, v = argv[i+1].split("=", maxsplit=1)
-			self.update({k: v})
-			msg = '\nSet "' + k + '" default to ' + '"' + v + '"'
-			consumed = True
-		elif argv[i] == '-r': # remove defaults
-			self.remove(argv[i+1])
-			msg = '\n Removed "' + argv[i+1] + '" default'
-			consumed = True
-		elif argv[i] == '-v': # show defaults
-			msg = '\nConfig file at: \n\t' + self.file_path + '\n' + self.read()
-			consumed = True
-		elif argv[i] == '-d': # reset defaults
-			self.reset()
-			msg = '\n Reset defaults'
-			consumed = True
+		if len(argv) > 1:
+			if argv[i] == '-h':
+				print(doc) # show help
+				exit()
+			elif argv[i] == '-s': # set defaults
+				k, v = argv[i+1].split("=", maxsplit=1)
+				self.update({k: v})
+				msg = '\nSet "' + k + '" default to ' + '"' + v + '"'
+				consumed = True
+			elif argv[i] == '-r': # remove defaults
+				self.remove(argv[i+1])
+				msg = '\n Removed "' + argv[i+1] + '" default'
+				consumed = True
+			elif argv[i] == '-v': # show defaults
+				msg = '\nConfig file at: \n\t' + self.file_path + '\n' + self.read()
+				consumed = True
+			elif argv[i] == '-d': # reset defaults
+				self.reset()
+				msg = '\n Reset defaults'
+				consumed = True
+		else:
+			print(doc)
+			exit()
 			
-		# (end) End commands with messsage and quit
+		# (end) End commands with messsage and quit if command
 		if consumed:
 			pprint(msg)
 			if quit:
@@ -218,6 +229,7 @@ class manage:
 		config = self.read()
 		config.update(arguments)
 		self.overwrite(config)
+		
 def parse(argv):
 	"""Parse optional list of keyword arguments into a dict.
 	

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>kwconfig &#8212; kwconfig 1.0.6 documentation</title>
+    <title>kwconfig &#8212; kwconfig 1.0.7 documentation</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0.6',
+        VERSION:     '1.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.6 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.7 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -169,10 +169,11 @@ to another configuration dictionary if it is not already set.</p>
 
 <dl class="method">
 <dt id="kwconfig.manage.command">
-<code class="descname">command</code><span class="sig-paren">(</span><em>argv</em>, <em>i=0</em>, <em>quit=True</em>, <em>silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.command" title="Permalink to this definition">¶</a></dt>
+<code class="descname">command</code><span class="sig-paren">(</span><em>argv</em>, <em>i=0</em>, <em>doc=''</em>, <em>quit=True</em>, <em>silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kwconfig.html#manage.command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kwconfig.manage.command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Consume a list of arguments and execute commands.</p>
 <p>Runs a kwconfig method based on item <code class="docutils literal"><span class="pre">i</span></code> in <code class="docutils literal"><span class="pre">argv</span></code>:</p>
 <ul class="simple">
+<li><code class="docutils literal"><span class="pre">['-h']</span></code> or <code class="docutils literal"><span class="pre">[]</span></code>: show <code class="docutils literal"><span class="pre">doc</span></code> text</li>
 <li><code class="docutils literal"><span class="pre">['-s',</span> <span class="pre">'&lt;arg&gt;=&lt;value&gt;']</span></code>: set default optional arguments</li>
 <li><code class="docutils literal"><span class="pre">['-r',</span> <span class="pre">'&lt;arg&gt;']</span></code>: remove default arguments</li>
 <li><code class="docutils literal"><span class="pre">['-v']</span></code>: view default arguments</li>
@@ -183,6 +184,9 @@ to another configuration dictionary if it is not already set.</p>
 <dd><dl class="first last docutils">
 <dt>argv (listof str):</dt>
 <dd>A list of str arguments to execute commands (e.g. from the command line).</dd>
+<dt>doc (str):</dt>
+<dd>String containing the help documentation to print out on the command line interface when using
+<code class="docutils literal"><span class="pre">-h</span></code> or not entering any commands or arguments.</dd>
 <dt>quit (bool):</dt>
 <dd>Whether to quit if a command is executed (if a command is not found, it will not exit).</dd>
 <dt>silent (bool):</dt>
@@ -336,7 +340,7 @@ to another configuration dictionary if it is not already set.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.6 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">kwconfig 1.0.7 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
