@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.0.7'
+__version__ = '1.0.8'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -145,32 +145,31 @@ class manage:
 		if len(argv) > 1:
 			if argv[i] == '-h':
 				print(doc) # show help
-				exit()
+				consumed = True
 			elif argv[i] == '-s': # set defaults
 				k, v = argv[i+1].split("=", maxsplit=1)
 				self.update({k: v})
-				msg = '\nSet "' + k + '" default to ' + '"' + v + '"'
+				print('\n Set "' + k + '" default to ' + '"' + v + '"')
 				consumed = True
 			elif argv[i] == '-r': # remove defaults
 				self.remove(argv[i+1])
-				msg = '\n Removed "' + argv[i+1] + '" default'
+				print('\n Removed "' + argv[i+1] + '" default')
 				consumed = True
 			elif argv[i] == '-v': # show defaults
-				msg = '\nConfig file at: \n\t' + self.file_path + '\n' + self.read()
-				consumed = True
+				print('\n Config file at: \n ' + self.file_path + '\n\n ')
+				pprint(self.read())
+				exit()
 			elif argv[i] == '-d': # reset defaults
 				self.reset()
-				msg = '\n Reset defaults'
+				print('\n Reset defaults')
 				consumed = True
 		else:
 			print(doc)
 			exit()
 			
 		# (end) End commands with messsage and quit if command
-		if consumed:
-			pprint(msg)
-			if quit:
-				exit()
+		if consumed and quit:
+			exit()
 	
 	def overwrite(self, new_config):
 		"""Overwrite default arguments for configuration file.
