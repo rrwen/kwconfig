@@ -95,8 +95,10 @@ Install from ``git`` cloned source:
 Tests
 *****
 
-1. Ensure `unittest <https://docs.python.org/2.7/library/unittest.html>`_ is available
-2. Run tests
+1. Clone into current path ``git clone https://github.com/rrwen/kwconfig``
+2. Enter into folder ``cd kwconfig``
+3. Ensure `unittest <https://docs.python.org/2.7/library/unittest.html>`_ is available
+4. Run tests
 
 ::
   
