@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.1.4'
+__version__ = '1.1.5'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -255,7 +255,7 @@ def parse(argv):
   """
   kwdict = {}
   for kv in argv:
-    k, v = kv.split('=', maxsplit=1)
+    k, v = kv.split('=', 1)
     kwdict[k.strip('-')] = v
   return(kwdict)
     

@@ -23,7 +23,7 @@ A Python module for managing config files in keyword style json format.
     :target: https://travis-ci.org/rrwen/kwconfig
 .. image:: https://img.shields.io/twitter/url/https/github.com/rrwen/kwconfig.svg?style=social
     :target: https://twitter.com/intent/tweet?text=simple%20%23python%20%23package%20for%20keyword%20%23json%20%23configuration:%20https://github.com/rrwen/kwconfig
-  
+
 Install
 -------
 
