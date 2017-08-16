@@ -10,7 +10,7 @@ class manageTest(TestCase):
 
   def setUp(self):
     tempfile = NamedTemporaryFile()
-    self.in_path = tempfile.name
+    self.in_path = str(tempfile.name)
     tempfile.close()
     
   def test_command(self):
