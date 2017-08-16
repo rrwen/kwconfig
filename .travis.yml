@@ -5,5 +5,8 @@ python:
 cache: pip
 install: 
   - pip install git+https://github.com/rrwen/kwconfig
+  - pip install coveralls
 script:
-  - python -m unittest
+  - coverage run --source=kwconfig -m unittest
+after_success:
+- coveralls
