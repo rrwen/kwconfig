@@ -9,16 +9,20 @@ kwconfig
 
 A Python module for managing config files in keyword style json format.
 
+.. image:: https://badge.fury.io/py/kwconfig.svg
+    :target: https://badge.fury.io/py/kwconfig
 .. image:: https://img.shields.io/github/issues/rrwen/kwconfig.svg
-  :target: https://github.com/rrwen/kwconfig/issues
+    :target: https://github.com/rrwen/kwconfig/issues
 .. image:: https://img.shields.io/github/forks/rrwen/kwconfig.svg
-  :target: https://github.com/rrwen/kwconfig/network
+    :target: https://github.com/rrwen/kwconfig/network
 .. image:: https://img.shields.io/github/stars/rrwen/kwconfig.svg
-  :target: https://github.com/rrwen/kwconfig/stargazers
+    :target: https://github.com/rrwen/kwconfig/stargazers
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
-  :target: https://raw.githubusercontent.com/rrwen/kwconfig/master/LICENSE
+    :target: https://raw.githubusercontent.com/rrwen/kwconfig/master/LICENSE
+.. image:: https://travis-ci.org/rrwen/kwconfig.svg?branch=master
+    :target: https://travis-ci.org/rrwen/kwconfig
 .. image:: https://img.shields.io/twitter/url/https/github.com/rrwen/kwconfig.svg?style=social
-  :target: https://twitter.com/intent/tweet?text=simple%20%40python%20package%20for%20keyword%20%40json%20%40configuration:%20https://github.com/rrwen/kwconfig
+    :target: https://twitter.com/intent/tweet?text=simple%20%23python%20%23package%20for%20keyword%20%23json%20%23configuration:%20https://github.com/rrwen/kwconfig
   
 Install
 -------
