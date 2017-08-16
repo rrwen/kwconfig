@@ -9,7 +9,17 @@ kwconfig
 
 A Python module for managing config files in keyword style json format.
 
-
+.. image:: https://img.shields.io/github/issues/rrwen/kwconfig.svg
+  :target: https://github.com/rrwen/kwconfig/issues
+.. image:: https://img.shields.io/github/forks/rrwen/kwconfig.svg
+  :target: https://github.com/rrwen/kwconfig/network
+.. image:: https://img.shields.io/github/stars/rrwen/kwconfig.svg
+  :target: https://github.com/rrwen/kwconfig/stargazers
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+  :target: https://raw.githubusercontent.com/rrwen/kwconfig/master/LICENSE
+.. image:: https://img.shields.io/twitter/url/https/github.com/rrwen/kwconfig.svg?style=social
+  :target: https://twitter.com/intent/tweet?text=simple%20%40python%20package%20for%20keyword%20%40json%20%40configuration:%20https://github.com/rrwen/kwconfig
+  
 Install
 -------
 
