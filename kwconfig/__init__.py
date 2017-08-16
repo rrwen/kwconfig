@@ -3,7 +3,7 @@
 __name__ = 'kwconfig'
 __author__ = 'Richard Wen'
 __email__ = 'rrwen.dev@gmail.com'
-__version__ = '1.1.5'
+__version__ = '1.1.6'
 __license__ = 'MIT'
 __description__ = 'A Python module for managing config files in keyword style json format.'
 __keywords__ = [
@@ -147,7 +147,7 @@ class manage:
         print(doc) # show help
         consumed = True
       elif argv[i] == '-s': # set defaults
-        k, v = argv[i+1].split("=", maxsplit=1)
+        k, v = argv[i+1].split("=", 1)
         self.update({k: v})
         print('\n Set "' + k + '" default to ' + '"' + v + '"')
         consumed = True
